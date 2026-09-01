@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Text Formatter, Bold Generator & Post Inspector - CarouselCraft</title>
+  <meta name="description" content="Professional LinkedIn text formatter. Generate Unicode bold, italic, and stylish fonts with live mobile feed preview, hook inspector, and character limit analytics.">
+  <link rel="canonical" href="https://linkedincarouseltool.in/linkedin-text-formatter.html">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://linkedincarouseltool.in/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eff6ff', 500: '#3b82f6', 600: '#0a66c2', 700: '#004182' },
+            slate: { 950: '#090d16', 900: '#0f172a', 850: '#131e36', 800: '#1e293b' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #0f172a; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    .font-glass { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col justify-between selection:bg-blue-600 selection:text-white">
+
+  <header class="border-b border-slate-800/80 font-glass sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <a href="/" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300 tracking-tight flex items-center gap-2">
+        <span class="p-1.5 rounded-lg bg-blue-600 text-white text-sm leading-none">⚡</span> CarouselCraft
+      </a>
+      <nav class="flex items-center gap-1.5 sm:gap-3 text-xs sm:text-sm font-semibold">
+        <a href="/" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/70 transition">Carousel PDF</a>
+        <a href="/tools.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/70 transition">All Tools</a>
+        <a href="/linkedin-text-formatter.html" class="px-3 py-1.5 rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30">Text Suite</a>
+        <a href="/url-slug-cleaner.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/70 transition">URL Cleaner</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full flex-grow">
+    
+    <div class="text-center max-w-2xl mx-auto mb-8">
+      <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-3">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span> Professional Post Optimizer
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white">LinkedIn Caption Formatter & Hook Inspector</h1>
+      <p class="text-slate-400 text-sm mt-2">Craft compelling headlines with Unicode font variations and preview your "...see more" cutoff line.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <div class="lg:col-span-7 space-y-4">
+        
+        <div class="bg-slate-900 border border-slate-800/90 rounded-2xl p-5 shadow-2xl relative">
+          
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80 mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Post Draft</span>
+            <div class="flex items-center gap-2">
+              <button onclick="applyTransform('clean')" class="text-xs text-slate-400 hover:text-white px-2 py-1 bg-slate-800 rounded transition">Clean Spaces</button>
+              <button onclick="clearText()" class="text-xs text-rose-400 hover:text-rose-300 px-2 py-1 bg-rose-500/10 rounded transition">Clear</button>
+            </div>
+          </div>
+
+          <textarea id="captionInput" rows="7" placeholder="Type or paste your post here...&#10;&#10;Pro Tip: Put your most engaging statement in the first 2 lines." class="w-full bg-slate-950/80 border border-slate-800 rounded-xl p-4 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base leading-relaxed resize-y custom-scrollbar"></textarea>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 pt-3 border-t border-slate-800/80 text-center">
+            <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/50">
+              <span class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold block">Characters</span>
+              <span id="charCount" class="text-lg font-black text-white">0</span>
+              <span class="text-[10px] text-slate-500 block">/ 3,000 max</span>
+            </div>
+            <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/50">
+              <span class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold block">Words</span>
+              <span id="wordCount" class="text-lg font-black text-white">0</span>
+              <span class="text-[10px] text-slate-500 block">Total</span>
+            </div>
+            <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/50">
+              <span class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold block">Hashtags</span>
+              <span id="tagCount" class="text-lg font-black text-blue-400">0</span>
+              <span class="text-[10px] text-slate-500 block">3-5 ideal</span>
+            </div>
+            <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/50">
+              <span class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold block">Read Time</span>
+              <span id="readTime" class="text-lg font-black text-emerald-400">0s</span>
+              <span class="text-[10px] text-slate-500 block">Estimated</span>
+            </div>
+          </div>
+
+          <div class="w-full bg-slate-800 rounded-full h-1.5 mt-3.5 overflow-hidden">
+            <div id="charBar" class="bg-blue-500 h-1.5 rounded-full transition-all duration-200" style="width: 0%"></div>
+          </div>
+
+          <div class="mt-4 flex flex-wrap items-center gap-1.5">
+            <span class="text-xs font-semibold text-slate-400 mr-1">Case Modifiers:</span>
+            <button onclick="applyTransform('title')" class="px-2.5 py-1 text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition">Title Case</button>
+            <button onclick="applyTransform('sentence')" class="px-2.5 py-1 text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition">Sentence case</button>
+            <button onclick="applyTransform('upper')" class="px-2.5 py-1 text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition">UPPERCASE</button>
+            <button onclick="applyTransform('lower')" class="px-2.5 py-1 text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition">lowercase</button>
+          </div>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-3">
+          <div class="flex items-center justify-between mb-2">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Instant Font Variants (Click to Copy)</h2>
+            <span class="text-[11px] text-slate-500">100% Unicode Compatible</span>
+          </div>
+
+          <div class="space-y-2.5" id="stylesList"></div>
+        </div>
+
+      </div>
+
+      <div class="lg:col-span-5 space-y-4">
+        
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-2xl sticky top-20">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300">Feed Simulation</h3>
+            </div>
+            <span class="text-[10px] text-slate-400 bg-slate-800 px-2 py-0.5 rounded font-mono">140 Char Cutoff</span>
+          </div>
+
+          <div class="mt-4 bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs text-slate-200">
+            
+            <div class="flex items-center gap-2.5 mb-3">
+              <div class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center font-bold text-white text-sm shadow">
+                U
+              </div>
+              <div>
+                <div class="font-bold text-white leading-none">Creator Name <span class="text-slate-500 font-normal">• 1st</span></div>
+                <div class="text-[10px] text-slate-400 mt-0.5">LinkedIn Creator & Growth Strategist</div>
+                <div class="text-[9px] text-slate-500">Just now • 🌐</div>
+              </div>
+            </div>
+
+            <div class="leading-relaxed whitespace-pre-line text-slate-200" id="previewContent">
+              Your formatted text hook will appear here...
+            </div>
+
+            <span id="seeMoreTrigger" class="text-slate-400 font-semibold hover:underline cursor-pointer hidden">...see more</span>
+          </div>
+
+          <div class="mt-4 bg-blue-950/30 border border-blue-800/40 rounded-xl p-3.5 text-xs text-blue-300 leading-relaxed">
+            💡 <b>Engagement Rule:</b> The first 2-3 lines determine whether a reader clicks "...see more". Use bold unicode fonts for your opening sentence to grab immediate attention.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-900/60 py-6 text-center text-xs text-slate-500">
+    <div class="max-w-5xl mx-auto px-4 space-y-3">
+      <div class="flex flex-wrap justify-center gap-5 text-slate-400">
+        <a href="/about.html" class="hover:text-blue-400">About</a>
+        <a href="/privacy.html" class="hover:text-blue-400">Privacy Policy</a>
+        <a href="/terms.html" class="hover:text-blue-400">Terms</a>
+        <a href="/contact.html" class="hover:text-blue-400">Contact</a>
+      </div>
+      <p>© 2026 CarouselCraft • Built for professional creators.</p>
+    </div>
+  </footer>
+
+  <script>
+    const input = document.getElementById('captionInput');
+    const charCount = document.getElementById('charCount');
+    const wordCount = document.getElementById('wordCount');
+    const tagCount = document.getElementById('tagCount');
+    const readTime = document.getElementById('readTime');
+    const charBar = document.getElementById('charBar');
+    const previewContent = document.getElementById('previewContent');
+    const seeMoreTrigger = document.getElementById('seeMoreTrigger');
+    const stylesList = document.getElementById('stylesList');
+
+    const styleDefinitions = [
+      {
+        id: 'boldSans',
+        name: 'Bold (Modern Sans)',
+        fn: (c) => {
+          const code = c.charCodeAt(0);
+          if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D5D4 + (code - 65));
+          if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D5EE + (code - 97));
+          if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7EC + (code - 48));
+          return c;
+        }
+      },
+      {
+        id: 'boldSerif',
+        name: 'Bold (Classic Serif)',
+        fn: (c) => {
+          const code = c.charCodeAt(0);
+          if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D400 + (code - 65));
+          if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D41A + (code - 97));
+          if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7CE + (code - 48));
+          return c;
+        }
+      },
+      {
+        id: 'italicSans',
+        name: 'Italic (Sans)',
+        fn: (c) => {
+          const code = c.charCodeAt(0);
+          if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D608 + (code - 65));
+          if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D622 + (code - 97));
+          return c;
+        }
+      },
+      {
+        id: 'scriptBold',
+        name: 'Script / Cursive Bold',
+        fn: (c) => {
+          const code = c.charCodeAt(0);
+          if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D4D0 + (code - 65));
+          if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D4EA + (code - 97));
+          return c;
+        }
+      },
+      {
+        id: 'mono',
+        name: 'Monospace (Code Style)',
+        fn: (c) => {
+          const code = c.charCodeAt(0);
+          if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D670 + (code - 65));
+          if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D68A + (code - 97));
+          if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7F6 + (code - 48));
+          return c;
+        }
+      },
+      {
+        id: 'doubleStruck',
+        name: 'Double-Struck (Outline)',
+        fn: (c) => {
+          const code = c.charCodeAt(0);
+          if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D538 + (code - 65));
+          if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D552 + (code - 97));
+          if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7D8 + (code - 48));
+          return c;
+        }
+      },
+      {
+        id: 'circled',
+        name: 'Circled / Bubble Text',
+        fn: (c) => {
+          const code = c.charCodeAt(0);
+          if (code >= 65 && code <= 90) return String.fromCodePoint(0x24B6 + (code - 65));
+          if (code >= 97 && code <= 122) return String.fromCodePoint(0x24D0 + (code - 97));
+          if (code >= 49 && code <= 57) return String.fromCodePoint(0x2460 + (code - 49));
+          return c;
+        }
+      }
+    ];
+
+    styleDefinitions.forEach(style => {
+      const card = document.createElement('div');
+      card.className = "bg-slate-950/70 border border-slate-800/90 rounded-xl p-3 sm:p-3.5 flex items-center justify-between gap-3 hover:border-slate-700 transition";
+      card.innerHTML = `
+        <div class="overflow-hidden">
+          <span class="text-[11px] font-semibold text-blue-400 block">${style.name}</span>
+          <div id="style_${style.id}" class="text-slate-200 text-sm truncate font-medium mt-0.5">Sample text...</div>
+        </div>
+        <button onclick="copyStyleText('style_${style.id}', this)" class="shrink-0 bg-slate-800 hover:bg-blue-600 text-slate-200 hover:text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1">
+          Copy
+        </button>
+      `;
+      stylesList.appendChild(card);
+    });
+
+    function processText() {
+      const val = input.value;
+      const chars = val.length;
+      const words = val.trim() ? val.trim().split(/\s+/).length : 0;
+      const tags = (val.match(/#[a-zA-Z0-9_]+/g) || []).length;
+      
+      charCount.textContent = chars;
+      wordCount.textContent = words;
+      tagCount.textContent = tags;
+      readTime.textContent = Math.ceil(words / 3.5) + 's';
+
+      const percent = Math.min((chars / 3000) * 100, 100);
+      charBar.style.width = percent + '%';
+      charBar.className = chars > 3000 ? 'bg-rose-500 h-1.5 rounded-full transition-all' : 'bg-blue-500 h-1.5 rounded-full transition-all';
+
+      if (!val) {
+        previewContent.textContent = "Your formatted text hook will appear here...";
+        seeMoreTrigger.classList.add('hidden');
+      } else {
+        if (chars > 140) {
+          previewContent.textContent = val.substring(0, 140);
+          seeMoreTrigger.classList.remove('hidden');
+        } else {
+          previewContent.textContent = val;
+          seeMoreTrigger.classList.add('hidden');
+        }
+      }
+
+      styleDefinitions.forEach(style => {
+        const target = document.getElementById(`style_${style.id}`);
+        if (!val) {
+          target.textContent = 'Sample text preview...';
+        } else {
+          target.textContent = val.split('').map(style.fn).join('');
+        }
+      });
+    }
+
+    input.addEventListener('input', processText);
+
+    function applyTransform(type) {
+      let val = input.value;
+      if (!val) return;
+
+      if (type === 'upper') input.value = val.toUpperCase();
+      if (type === 'lower') input.value = val.toLowerCase();
+      if (type === 'title') {
+        input.value = val.toLowerCase().split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      }
+      if (type === 'sentence') {
+        input.value = val.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase());
+      }
+      if (type === 'clean') {
+        input.value = val.replace(/[ \t]+/g, ' ').replace(/\n\s*\n/g, '\n\n').trim();
+      }
+      processText();
+    }
+
+    function clearText() {
+      input.value = '';
+      processText();
+    }
+
+    function copyStyleText(elementId, btn) {
+      const text = document.getElementById(elementId).textContent;
+      if (!text || text === 'Sample text preview...') return;
+      navigator.clipboard.writeText(text).then(() => {
+        const prev = btn.textContent;
+        btn.textContent = 'Copied! ✓';
+        btn.classList.add('bg-emerald-600', 'text-white');
+        setTimeout(() => {
+          btn.textContent = prev;
+          btn.classList.remove('bg-emerald-600', 'text-white');
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>
