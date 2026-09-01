@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Creator Tools Suite & Utilities - CarouselCraft</title>
+  <meta name="description" content="Explore CarouselCraft's complete suite of high-performance, client-side LinkedIn tools. Free PDF converters, unicode formatters, guides, and SEO utilities.">
+  <link rel="canonical" href="https://linkedincarouseltool.in/tools.html">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://linkedincarouseltool.in/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8' },
+            slate: { 950: '#090d16', 900: '#0f172a', 850: '#131e36', 800: '#1e293b' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-nav { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); }
+    .glass-card { background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(10px); }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col justify-between selection:bg-blue-600 selection:text-white">
+
+  <header class="border-b border-slate-800/80 glass-nav sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <a href="/" class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300 tracking-tight flex items-center gap-2">
+        <span class="p-1.5 rounded-lg bg-blue-600 text-white text-sm leading-none shadow-lg shadow-blue-500/30">⚡</span> CarouselCraft
+      </a>
+      <nav class="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm font-semibold">
+        <a href="/" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/70 transition">Carousel PDF</a>
+        <a href="/tools.html" class="px-3 py-1.5 rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30">All Tools</a>
+        <a href="/linkedin-text-formatter.html" class="hidden sm:inline-block px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/70 transition">Text Suite</a>
+        <a href="/url-slug-cleaner.html" class="hidden sm:inline-block px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/70 transition">URL Cleaner</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-12 w-full flex-grow">
+    
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-wider uppercase px-3.5 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-4">
+        ⚡ Ecosystem Directory
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+        LinkedIn Creator Toolkit
+      </h1>
+      <p class="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed">
+        Engineered for zero latency, 100% browser-based security, and optimal LinkedIn engagement. No subscriptions, no watermarks.
+      </p>
+
+      <div class="mt-8 max-w-lg mx-auto relative">
+        <input type="text" id="toolSearch" placeholder="Search utilities (e.g. Canva, Bold, Slug, PDF)..." class="w-full bg-slate-900 border border-slate-800 rounded-2xl px-5 py-3.5 pl-11 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition shadow-xl">
+        <span class="absolute left-4 top-3.5 text-slate-500 text-sm">🔍</span>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs font-semibold" id="filterTabs">
+      <button onclick="filterCategory('all', this)" class="filter-btn px-4 py-2 rounded-xl bg-blue-600 text-white transition shadow-md shadow-blue-600/20">All Utilities</button>
+      <button onclick="filterCategory('core', this)" class="filter-btn px-4 py-2 rounded-xl bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition">Core Generators</button>
+      <button onclick="filterCategory('formatting', this)" class="filter-btn px-4 py-2 rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition">Text & SEO</button>
+      <button onclick="filterCategory('guides', this)" class="filter-btn px-4 py-2 rounded-xl bg-slate-900 text-slate-400 hover:text-slate-100 border border-slate-800 transition">Dimensions & Guides</button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="toolsGrid">
+      
+      <div class="tool-card group glass-card border border-slate-800 rounded-2xl p-6 shadow-xl hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between" data-category="core" data-tags="pdf carousel maker canva figma convert 4:5">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              🚀
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wide px-2.5 py-0.5 rounded-full bg-blue-600/20 text-blue-400 border border-blue-500/30">Primary Tool</span>
+          </div>
+          <h2 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">LinkedIn Carousel PDF Maker</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
+            Convert image slides into crystal-clear 4:5 portrait PDFs with live layout previews and drag-and-drop sequencing.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+          <span class="text-[11px] text-slate-500 font-mono">1080x1350 • PDF</span>
+          <a href="/" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-3.5 py-2 rounded-lg transition flex items-center gap-1 shadow-md shadow-blue-600/20">
+            Open Tool <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-card group glass-card border border-slate-800 rounded-2xl p-6 shadow-xl hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between" data-category="formatting" data-tags="text bold italic font generator unicode hook inspector counter">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              ✍️
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wide px-2.5 py-0.5 rounded-full bg-indigo-600/20 text-indigo-400 border border-indigo-500/30">Engagement</span>
+          </div>
+          <h2 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">Text Formatter & Hook Inspector</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
+            Generate unicode Bold/Italic typography and inspect your 140-character feed cutoff to maximize "...see more" clicks.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+          <span class="text-[11px] text-slate-500 font-mono">Unicode • 3k Limit</span>
+          <a href="/linkedin-text-formatter.html" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-3.5 py-2 rounded-lg transition flex items-center gap-1 shadow-md shadow-indigo-600/20">
+            Open Tool <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-card group glass-card border border-slate-800 rounded-2xl p-6 shadow-xl hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between" data-category="formatting" data-tags="url slug cleaner diacritics accents seo utm tracking link">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              🔗
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wide px-2.5 py-0.5 rounded-full bg-emerald-600/20 text-emerald-400 border border-emerald-500/30">SEO Utility</span>
+          </div>
+          <h2 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">URL Slug Cleaner & UTM Builder</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
+            Strip accents (é, ñ, ü, ø), clean stop words, and build LinkedIn campaign UTM links for precise traffic analytics.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+          <span class="text-[11px] text-slate-500 font-mono">ASCII • UTM Link</span>
+          <a href="/url-slug-cleaner.html" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-2 rounded-lg transition flex items-center gap-1 shadow-md shadow-emerald-600/20">
+            Open Tool <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-card group glass-card border border-slate-800 rounded-2xl p-6 shadow-xl hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between" data-category="guides" data-tags="size dimensions guide 4:5 1:1 aspect ratio calculator">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              📐
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wide px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400">Dimensions</span>
+          </div>
+          <h2 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">Carousel Size & Ratio Calculator</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
+            Complete dimension cheatsheet and aspect ratio calculator for portrait, square, and landscape feed posts.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+          <span class="text-[11px] text-slate-500 font-mono">1080x1350 • Cheatsheet</span>
+          <a href="/linkedin-carousel-size-converter.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-3.5 py-2 rounded-lg transition flex items-center gap-1">
+            View Guide <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-card group glass-card border border-slate-800 rounded-2xl p-6 shadow-xl hover:border-pink-500/50 transition-all duration-300 flex flex-col justify-between" data-category="core" data-tags="canva to pdf convert deck slides images high quality">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              🎨
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wide px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30">Canva Workflow</span>
+          </div>
+          <h2 class="text-lg font-bold text-white group-hover:text-pink-400 transition-colors">Canva to LinkedIn Deck Converter</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
+            Step-by-step export workflow to avoid Canva PDF compression blur and generate uncompressed carousel documents.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+          <span class="text-[11px] text-slate-500 font-mono">Zero Blur • PNG</span>
+          <a href="/canva-to-linkedin-carousel.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-3.5 py-2 rounded-lg transition flex items-center gap-1">
+            Launch Guide <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="tool-card group glass-card border border-slate-800 rounded-2xl p-6 shadow-xl hover:border-purple-500/50 transition-all duration-300 flex flex-col justify-between" data-category="guides" data-tags="figma ui ux frames export carousel presentation">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              💠
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wide px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-400 border border-purple-500/30">Designer Suite</span>
+          </div>
+          <h2 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">Figma Frame to PDF Pipeline</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
+            Standardized frame setup guide and compilation pipeline for product designers and Figma creators.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+          <span class="text-[11px] text-slate-500 font-mono">Figma • Prototype</span>
+          <a href="/figma-to-linkedin-pdf.html" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-3.5 py-2 rounded-lg transition flex items-center gap-1">
+            View Guide <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12 border-t border-slate-800/80">
+      <div class="text-center p-4">
+        <div class="text-2xl mb-2">🔒</div>
+        <h3 class="text-sm font-bold text-slate-200">100% Client-Side Privacy</h3>
+        <p class="text-xs text-slate-400 mt-1">Images & text never touch a remote backend server. Everything executes locally in your browser.</p>
+      </div>
+      <div class="text-center p-4">
+        <div class="text-2xl mb-2">⚡</div>
+        <h3 class="text-sm font-bold text-slate-200">Ultra-Fast & Free</h3>
+        <p class="text-xs text-slate-400 mt-1">Zero paywalls, no watermark additions, and instant processing speeds.</p>
+      </div>
+      <div class="text-center p-4">
+        <div class="text-2xl mb-2">📱</div>
+        <h3 class="text-sm font-bold text-slate-200">Mobile Optimized</h3>
+        <p class="text-xs text-slate-400 mt-1">Engineered specifically for the LinkedIn mobile algorithm and 4:5 aspect ratio.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-900/60 py-6 text-center text-xs text-slate-500">
+    <div class="max-w-5xl mx-auto px-4 space-y-3">
+      <div class="flex flex-wrap justify-center gap-5 text-slate-400">
+        <a href="/about.html" class="hover:text-blue-400">About</a>
+        <a href="/privacy.html" class="hover:text-blue-400">Privacy Policy</a>
+        <a href="/terms.html" class="hover:text-blue-400">Terms</a>
+        <a href="/contact.html" class="hover:text-blue-400">Contact</a>
+      </div>
+      <p>© 2026 CarouselCraft • Built for LinkedIn Creators & Growth Teams</p>
+    </div>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('toolSearch');
+    const cards = document.querySelectorAll('.tool-card');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    let currentCategory = 'all';
+
+    function filterCategory(cat, btn) {
+      currentCategory = cat;
+      filterButtons.forEach(b => {
+        b.className = 'filter-btn px-4 py-2 rounded-xl bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition';
+      });
+      btn.className = 'filter-btn px-4 py-2 rounded-xl bg-blue-600 text-white transition shadow-md shadow-blue-600/20';
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const query = searchInput.value.toLowerCase().trim();
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const tags = card.getAttribute('data-tags').toLowerCase();
+        const title = card.querySelector('h2').textContent.toLowerCase();
+
+        const matchesCat = currentCategory === 'all' || category === currentCategory;
+        const matchesQuery = !query || tags.includes(query) || title.includes(query);
+
+        if (matchesCat && matchesQuery) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+  </script>
+</body>
+</html>
