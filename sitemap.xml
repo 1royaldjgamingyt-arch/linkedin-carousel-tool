@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  <!-- Home Page / Tool -->
   <url>
     <loc>https://linkedincarouseltool.in/</loc>
     <lastmod>2026-09-01</lastmod>
@@ -9,28 +8,46 @@
     <priority>1.00</priority>
   </url>
 
-  <!-- Canva to LinkedIn Landing Page -->
+  <url>
+    <loc>https://linkedincarouseltool.in/tools.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://linkedincarouseltool.in/linkedin-text-formatter.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://linkedincarouseltool.in/url-slug-cleaner.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
   <url>
     <loc>https://linkedincarouseltool.in/canva-to-linkedin-carousel.html</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
 
-  <!-- LinkedIn Carousel Size Guide -->
   <url>
     <loc>https://linkedincarouseltool.in/linkedin-carousel-size-converter.html</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
 
-  <!-- Figma to LinkedIn Landing Page -->
   <url>
     <loc>https://linkedincarouseltool.in/figma-to-linkedin-pdf.html</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.80</priority>
   </url>
 
 </urlset>
