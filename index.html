@@ -1,576 +1,432 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N1368X474S"></script>
-        
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1368X474S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N1368X474S');
+  </script>
 
-  gtag('config', 'G-N1368X474S');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="kE3K2pSyIPot51umOrH9e0fMyRirFUWmzbG5T_lAzl4" />
-    
-    <title>Free LinkedIn Carousel Generator & PDF Maker</title>
-    <meta name="description" content="Generate crisp, mobile-optimized LinkedIn carousel PDFs online. 100% free, client-side, zero compression, and no watermark. Try CarouselCraft today.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="kE3K2pSyIPot51umOrH9e0fMyRirFUWmzbG5T_lAzl4">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b0f19">
 
-    <!-- 1. Google Site Display Name (Meta Tags) -->
-    <meta property="og:site_name" content="Carousel Craft">
-    <meta name="application-name" content="Carousel Craft">
-    <meta name="apple-mobile-web-app-title" content="Carousel Craft">
+  <title>LinkedIn Carousel Tool - Free Carousel PDF Maker</title>
+  <meta name="description" content="Create LinkedIn carousels for free. Upload images, reorder slides, preview your carousel, and download a high-quality PDF. No sign-up or watermark.">
+  <link rel="canonical" href="https://linkedincarouseltool.in/">
 
-    <!-- 2. Single Clean Structured Data Schema -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Carousel Craft",
-  "alternateName": "CarouselCraft",
-  "url": "https://linkedincarouseltool.in/"
-}
-    </script>
-    
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LinkedIn Carousel Tool">
+  <meta property="og:title" content="LinkedIn Carousel Tool - Free Carousel PDF Maker">
+  <meta property="og:description" content="Turn images into a professional LinkedIn carousel PDF for free. Upload, reorder, preview, and export directly in your browser.">
+  <meta property="og:url" content="https://linkedincarouseltool.in/">
+  <meta name="application-name" content="LinkedIn Carousel Tool">
+  <meta name="apple-mobile-web-app-title" content="LinkedIn Carousel Tool">
 
-    <!-- 3. Favicon (Use full HTTPS URL for Google Crawler) -->
-    <link rel="icon" type="image/png" sizes="192x192" href="https://linkedincarouseltool.in/favicon.png">
-    <link rel="apple-touch-icon" href="https://linkedincarouseltool.in/favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LinkedIn Carousel Tool",
+    "alternateName": ["LinkedIn Carousel Generator", "Free LinkedIn Carousel PDF Maker"],
+    "url": "https://linkedincarouseltool.in/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LinkedIn Carousel Tool",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Any",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "A free browser-based tool to turn images into LinkedIn carousel PDF documents."
+  }
+  </script>
 
-    <!-- Fonts & Libraries -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#eef6ff',
-                            500: '#0066ff',
-                            600: '#0052cc',
-                            700: '#003d99',
-                        }
-                    }
-                }
-            }
+  <link rel="icon" type="image/png" sizes="192x192" href="https://linkedincarouseltool.in/favicon.png">
+  <link rel="apple-touch-icon" href="https://linkedincarouseltool.in/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+          colors: { brand: { 50: '#eef6ff', 500: '#0066ff', 600: '#0052cc', 700: '#003d99' } }
         }
-    </script>
-    <style>
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .custom-glow {
-            box-shadow: 0 0 50px -10px rgba(0, 102, 255, 0.25);
-        }
-        .sortable-ghost {
-            opacity: 0.3;
-            transform: scale(0.95);
-        }
-    </style>
-
-    <!-- Vercel Web Analytics -->
-    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
-    
+      }
+    };
+  </script>
+  <style>
+    * { -webkit-tap-highlight-color: transparent; }
+    body { font-family: "Plus Jakarta Sans", sans-serif; }
+    .glass-panel { background: rgba(15,23,42,.72); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.08); }
+    .custom-glow { box-shadow: 0 0 50px -10px rgba(0,102,255,.25); }
+    .sortable-ghost { opacity: .3; transform: scale(.95); }
+    .slide-thumb { aspect-ratio: 4/5; }
+    .content-light { color: #cbd5e1; }
+    .content-light h2 { color: #f8fafc; }
+    .content-light h3 { color: #f8fafc; }
+    .content-light p { color: #cbd5e1; }
+    button:disabled { opacity: .55; cursor: not-allowed; }
+  </style>
+  <!-- Vercel Web Analytics -->
+  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
+
 <body class="bg-[#0b0f19] text-slate-100 min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-brand-500/10 blur-[140px] pointer-events-none -z-10"></div>
 
-    <!-- Glowing Background Aura -->
-    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-brand-500/10 blur-[140px] pointer-events-none -z-10"></div>
-
-    <!-- Header -->
-    <header class="border-b border-white/5 bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-blue-400 flex items-center justify-center shadow-lg shadow-brand-500/20">
-                    <i data-lucide="layers" class="w-5 h-5 text-white"></i>
-                </div>
-                <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">CarouselCraft</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-500 border border-brand-500/20 ml-2">Studio</span>
-            </div>
-            
-            <div class="flex items-center gap-4">
-                <span class="hidden sm:flex items-center gap-1.5 text-xs text-slate-400">
-
-                    
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> 100% Client-Side Private
-                </span>
-                <a href="/tools.html" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition shadow-sm shadow-blue-600/30">
-  <span>🛠️</span>
-  <span>Tools</span>
-                </a>
-                
-                <a href="#faq" class="text-xs text-slate-400 hover:text-white transition">FAQ</a>
-            </div>
+  <header class="border-b border-white/5 bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 min-h-16 py-3 flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-3 min-w-0" aria-label="LinkedIn Carousel Tool home">
+        <div class="w-9 h-9 shrink-0 rounded-xl bg-gradient-to-tr from-brand-600 to-blue-400 flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <i data-lucide="layers" class="w-5 h-5 text-white"></i>
         </div>
-    </header>
-
-    <!-- Main Workspace -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex-grow w-full">
-        
-        <!-- Hero Section -->
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-slate-300 mb-4">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-500"></i> No Sign-Up • Zero Compression Loss
-            </div>
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-    <span class="block text-2xl sm:text-3xl text-brand-500 mb-2">Carousel Craft</span>
-    Turn Images into <span class="bg-gradient-to-r from-blue-400 to-brand-500 bg-clip-text text-transparent">LinkedIn Carousels</span>
-            </h1>
-            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                Optimize slides for maximum engagement. Drag & reorder, preview live mobile layout, and export crystal-clear PDFs.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
-            <!-- Left Panel: Uploader & Slide Manager -->
-            <div class="lg:col-span-7 space-y-6">
-                
-                <!-- Dropzone Card -->
-                <div class="glass-panel rounded-3xl p-6 relative overflow-hidden group transition">
-                    <input type="file" id="fileInput" multiple accept="image/png, image/jpeg, image/webp" class="hidden">
-                    <div id="dropzone" class="border-2 border-dashed border-white/10 group-hover:border-brand-500/50 group-hover:bg-brand-500/5 rounded-2xl p-8 sm:p-12 text-center cursor-pointer transition flex flex-col items-center justify-center">
-                        <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition text-brand-500">
-                            <i data-lucide="upload-cloud" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-base font-semibold text-white mb-1">Click to upload or drag & drop slides</h3>
-                        <p class="text-xs text-slate-400 mb-3">Supports high-res PNG, JPG, or WEBP</p>
-                        <span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">
-                            <i data-lucide="info" class="w-3 h-3"></i> Recommended: 1080 x 1350 px (4:5)
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Slide Organizer Section -->
-                <div id="deckControls" class="glass-panel rounded-3xl p-6 hidden">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-2">
-                            <h3 class="font-bold text-sm text-white">Slide Deck</h3>
-                            <span id="slideCountBadge" class="text-xs font-semibold px-2 py-0.5 rounded-full bg-brand-500/20 text-brand-500 border border-brand-500/30">0 Slides</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <button id="addMoreBtn" class="text-xs px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 transition flex items-center gap-1">
-                                <i data-lucide="plus" class="w-3.5 h-3.5"></i> Add
-                            </button>
-                            <button id="clearAllBtn" class="text-xs px-3 py-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 text-red-400 transition flex items-center gap-1">
-                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Reset
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <p class="text-xs text-slate-400 mb-3 flex items-center gap-1.5">
-                        <i data-lucide="grip-horizontal" class="w-3.5 h-3.5"></i> Drag thumbnails horizontally to reorder slides
-                    </p>
-
-                    <div id="sortableSlides" class="grid grid-cols-4 sm:grid-cols-6 gap-3 min-h-[90px]"></div>
-
-                    <div class="mt-6 pt-5 border-t border-white/5 flex flex-col sm:flex-row gap-3">
-                        <button id="downloadPdfBtn" class="flex-1 py-3.5 px-6 rounded-xl bg-brand-500 hover:bg-brand-600 active:scale-[0.99] text-white font-bold text-sm shadow-lg shadow-brand-500/30 transition flex items-center justify-center gap-2">
-                            <i data-lucide="download" class="w-4 h-4"></i> Download LinkedIn Ready PDF
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Right Panel: Ultra-Realistic LinkedIn Mobile Preview -->
-            <div class="lg:col-span-5 flex flex-col items-center">
-                
-                <div class="w-full max-w-[360px] bg-[#1e293b] p-3.5 rounded-[40px] shadow-2xl border border-slate-700/60 custom-glow relative">
-                    
-                    <!-- Speaker & Notch Mockup -->
-                    <div class="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-[#0f172a] rounded-full z-20 flex items-center justify-center">
-                        <div class="w-2.5 h-2.5 rounded-full bg-slate-800 mr-2"></div>
-                        <div class="w-7 h-1 rounded-full bg-slate-800"></div>
-                    </div>
-
-                    <!-- Phone Screen Container -->
-                    <div class="bg-white rounded-[32px] overflow-hidden flex flex-col h-[560px] text-slate-900 select-none relative pt-6">
-                        
-                        <!-- LinkedIn App Bar -->
-                        <div class="px-4 py-2 border-b border-slate-100 flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xs">
-                                    CC
-                                </div>
-                                <div>
-                                    <p class="text-xs font-bold leading-tight flex items-center gap-1">
-                                        Your Brand <span class="text-[9px] text-slate-400 font-normal">• 1st</span>
-                                    </p>
-                                    <p class="text-[10px] text-slate-400 leading-tight">Creator & Growth Strategist</p>
-                                </div>
-                            </div>
-                            <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-400"></i>
-                        </div>
-
-                        <!-- Preview Area -->
-                        <div class="relative flex-grow bg-slate-100 flex items-center justify-center overflow-hidden group">
-                            
-                            <img id="mainPreviewImg" class="max-h-full max-w-full object-contain hidden" alt="Active Slide">
-                            
-                            <div id="placeholderState" class="text-center p-8 text-slate-400">
-                                <div class="w-12 h-12 rounded-2xl bg-slate-200/80 mx-auto flex items-center justify-center mb-2">
-                                    <i data-lucide="file-image" class="w-6 h-6 text-slate-500"></i>
-                                </div>
-                                <p class="text-xs font-semibold text-slate-600">Mobile Mockup Ready</p>
-                                <p class="text-[10px] text-slate-400 mt-0.5">Upload slides to see live swipe view</p>
-                            </div>
-
-                            <!-- Carousel Nav Overlay -->
-                            <button id="prevBtn" class="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm text-white hidden items-center justify-center hover:bg-black/80 transition shadow">
-                                <i data-lucide="chevron-left" class="w-4 h-4"></i>
-                            </button>
-                            <button id="nextBtn" class="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm text-white hidden items-center justify-center hover:bg-black/80 transition shadow">
-                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                            </button>
-                        </div>
-
-                        <!-- LinkedIn Document Bottom Bar -->
-                        <div class="px-4 py-2.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
-                            <span id="pageIndicator" class="font-bold text-[11px] text-slate-500">0 / 0</span>
-                            <div class="flex items-center gap-1 text-[11px] text-blue-600 font-semibold">
-                                <span>Swipe</span> <i data-lucide="arrow-right" class="w-3 h-3"></i>
-                            </div>
-                        </div>
-
-                        <!-- Social Action Bar -->
-                        <div class="px-5 py-2 border-t border-slate-100 flex items-center justify-between text-slate-400">
-                            <i data-lucide="thumbs-up" class="w-4 h-4"></i>
-                            <i data-lucide="message-square" class="w-4 h-4"></i>
-                            <i data-lucide="repeat" class="w-4 h-4"></i>
-                            <i data-lucide="send" class="w-4 h-4"></i>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- SEO FAQ Section -->
-        <section id="faq" class="mt-24 border-t border-white/5 pt-12 max-w-4xl mx-auto">
-            <h2 class="text-2xl font-bold text-white mb-8 text-center">Frequently Asked Questions</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="glass-panel p-5 rounded-2xl">
-                    <h3 class="font-bold text-white text-sm mb-1.5 flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> What is the best aspect ratio?
-                    </h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">The 4:5 portrait ratio (1080 x 1350 px) captures the most mobile screen real estate on LinkedIn feeds, driving higher click-throughs.</p>
-                </div>
-                <div class="glass-panel p-5 rounded-2xl">
-                    <h3 class="font-bold text-white text-sm mb-1.5 flex items-center gap-2">
-                        <i data-lucide="shield-check" class="w-4 h-4 text-brand-500"></i> Is my data secure?
-                    </h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">100%. Image rendering and PDF generation happen directly inside your browser via WebAssembly/Canvas. Zero data leaves your computer.</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-white/5 py-8 text-center text-xs text-slate-500 bg-[#070a11]">
-        <p>© 2026 CarouselCraft. Built for Creators & Founders worldwide.</p>
-    </footer>
-
-    <!-- Logic Script -->
-    <script>
-        const { jsPDF } = window.jspdf;
-        let slideDeck = [];
-        let activeIndex = 0;
-
-        // Elements
-        const dropzone = document.getElementById('dropzone');
-        const fileInput = document.getElementById('fileInput');
-        const deckControls = document.getElementById('deckControls');
-        const sortableSlides = document.getElementById('sortableSlides');
-        const slideCountBadge = document.getElementById('slideCountBadge');
-        const addMoreBtn = document.getElementById('addMoreBtn');
-        const clearAllBtn = document.getElementById('clearAllBtn');
-        const downloadPdfBtn = document.getElementById('downloadPdfBtn');
-        const mainPreviewImg = document.getElementById('mainPreviewImg');
-        const placeholderState = document.getElementById('placeholderState');
-        const pageIndicator = document.getElementById('pageIndicator');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // Drag & Drop Handling
-        dropzone.addEventListener('click', () => fileInput.click());
-        addMoreBtn.addEventListener('click', () => fileInput.click());
-
-        fileInput.addEventListener('change', (e) => {
-            loadFiles(Array.from(e.target.files));
-            fileInput.value = '';
-        });
-
-        dropzone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            dropzone.classList.add('border-brand-500', 'bg-brand-500/10');
-        });
-
-        ['dragleave', 'drop'].forEach(evt => {
-            dropzone.addEventListener(evt, () => {
-                dropzone.classList.remove('border-brand-500', 'bg-brand-500/10');
-            });
-        });
-
-        dropzone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            if (e.dataTransfer.files.length) {
-                loadFiles(Array.from(e.dataTransfer.files));
-            }
-        });
-
-        function loadFiles(files) {
-            const validImages = files.filter(f => f.type.startsWith('image/'));
-            if (!validImages.length) return;
-
-            let loaded = 0;
-            validImages.forEach(file => {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    slideDeck.push({ id: Math.random().toString(36).substr(2, 9), src: e.target.result });
-                    loaded++;
-                    if (loaded === validImages.length) {
-                        updateUI();
-                    }
-                };
-                reader.readAsDataURL(file);
-            });
-        }
-
-        function updateUI() {
-            if (slideDeck.length > 0) {
-                deckControls.classList.remove('hidden');
-                placeholderState.classList.add('hidden');
-                mainPreviewImg.classList.remove('hidden');
-                prevBtn.classList.replace('hidden', 'flex');
-                nextBtn.classList.replace('hidden', 'flex');
-                
-                if (activeIndex >= slideDeck.length) activeIndex = slideDeck.length - 1;
-
-                slideCountBadge.innerText = `${slideDeck.length} ${slideDeck.length === 1 ? 'Slide' : 'Slides'}`;
-                renderThumbnails();
-                renderPreview();
-            } else {
-                deckControls.classList.add('hidden');
-                placeholderState.classList.remove('hidden');
-                mainPreviewImg.classList.add('hidden');
-                prevBtn.classList.replace('flex', 'hidden');
-                nextBtn.classList.replace('flex', 'hidden');
-                pageIndicator.innerText = '0 / 0';
-                activeIndex = 0;
-            }
-            lucide.createIcons();
-        }
-
-        function renderThumbnails() {
-            sortableSlides.innerHTML = '';
-            slideDeck.forEach((slide, idx) => {
-                const item = document.createElement('div');
-                item.className = `relative rounded-xl overflow-hidden cursor-pointer aspect-[4/5] border-2 transition group ${idx === activeIndex ? 'border-brand-500 ring-2 ring-brand-500/30' : 'border-white/10 hover:border-white/30'}`;
-                item.dataset.id = slide.id;
-                
-                item.innerHTML = `
-                    <img src="${slide.src}" class="w-full h-full object-cover pointer-events-none">
-                    <span class="absolute top-1 left-1 bg-black/70 backdrop-blur-sm text-[10px] font-bold px-1.5 py-0.5 rounded text-white">${idx + 1}</span>
-                    <button class="remove-btn absolute top-1 right-1 w-5 h-5 rounded bg-red-600/80 hover:bg-red-600 text-white hidden group-hover:flex items-center justify-center text-xs transition">✕</button>
-                `;
-
-                item.addEventListener('click', (e) => {
-                    if (e.target.closest('.remove-btn')) {
-                        slideDeck.splice(idx, 1);
-                        updateUI();
-                    } else {
-                        activeIndex = idx;
-                        renderPreview();
-                        renderThumbnails();
-                    }
-                });
-
-                sortableSlides.appendChild(item);
-            });
-        }
-
-        // SortableJS Drag & Drop
-        new Sortable(sortableSlides, {
-            animation: 150,
-            ghostClass: 'sortable-ghost',
-            onEnd: () => {
-                const newOrder = [];
-                sortableSlides.querySelectorAll('[data-id]').forEach(el => {
-                    const found = slideDeck.find(s => s.id === el.dataset.id);
-                    if (found) newOrder.push(found);
-                });
-                slideDeck = newOrder;
-                updateUI();
-            }
-        });
-
-        function renderPreview() {
-            if (slideDeck[activeIndex]) {
-                mainPreviewImg.src = slideDeck[activeIndex].src;
-                pageIndicator.innerText = `${activeIndex + 1} / ${slideDeck.length}`;
-            }
-        }
-
-        prevBtn.addEventListener('click', () => {
-            if (activeIndex > 0) {
-                activeIndex--;
-                renderPreview();
-                renderThumbnails();
-            }
-        });
-
-        nextBtn.addEventListener('click', () => {
-            if (activeIndex < slideDeck.length - 1) {
-                activeIndex++;
-                renderPreview();
-                renderThumbnails();
-            }
-        });
-
-        clearAllBtn.addEventListener('click', () => {
-            slideDeck = [];
-            updateUI();
-        });
-
-        downloadPdfBtn.addEventListener('click', async () => {
-            if (!slideDeck.length) return;
-            downloadPdfBtn.disabled = true;
-            downloadPdfBtn.innerHTML = `<span class="animate-spin mr-2">◷</span> Generating Ultra-HD PDF...`;
-
-            // Standard LinkedIn Document Size: 1080 x 1350 px
-            const doc = new jsPDF({
-                orientation: 'portrait',
-                unit: 'px',
-                format: [1080, 1350]
-            });
-
-            for (let i = 0; i < slideDeck.length; i++) {
-                if (i > 0) doc.addPage([1080, 1350], 'portrait');
-                doc.addImage(slideDeck[i].src, 'JPEG', 0, 0, 1080, 1350, undefined, 'SLOW');
-            }
-
-            doc.save('linkedin-carousel-deck.pdf');
-            downloadPdfBtn.disabled = false;
-            downloadPdfBtn.innerHTML = `<i data-lucide="download" class="w-4 h-4"></i> Download LinkedIn Ready PDF`;
-            lucide.createIcons();
-        });
-    </script>
-<!-- Content & SEO Section for AdSense Approval -->
-<section class="max-w-4xl mx-auto px-4 py-12 mt-12 border-t border-gray-200">
-  
-  <!-- Section 1: Value Proposition -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Use CarouselCraft?</h2>
-    <p class="text-gray-600 leading-relaxed mb-4">
-      Creating high-performing LinkedIn carousels shouldn't require paid subscriptions or complicated design software. CarouselCraft is a lightweight, privacy-focused tool that lets you arrange slides, preview live layouts, and export high-resolution PDFs directly in your browser.
-    </p>
-    <div class="grid md:grid-cols-3 gap-6 mt-6">
-      <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
-        <h3 class="font-semibold text-gray-900 mb-2">🔒 100% Privacy-First</h3>
-        <p class="text-sm text-gray-600">All image processing runs client-side. Your slides never leave your browser or get stored on remote servers.</p>
-      </div>
-      <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
-        <h3 class="font-semibold text-gray-900 mb-2">⚡ Zero Compression Loss</h3>
-        <p class="text-sm text-gray-600">Generates clean 4:5 portrait PDFs with maximum sharpness so your text remains crisp on both mobile and desktop screens.</p>
-      </div>
-      <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
-        <h3 class="font-semibold text-gray-900 mb-2">🚫 No Sign-Up & No Watermark</h3>
-        <p class="text-sm text-gray-600">Completely free forever with no forced logins, credit card requirements, or intrusive watermarks.</p>
-      </div>
+        <span class="font-extrabold text-sm sm:text-lg tracking-tight text-white">LinkedIn Carousel Tool</span>
+      </a>
+      <nav class="flex items-center gap-3 sm:gap-4 shrink-0">
+        <span class="hidden md:flex items-center gap-1.5 text-xs text-slate-400"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Files stay in your browser</span>
+        <a href="/tools.html" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition"><i data-lucide="wrench" class="w-3.5 h-3.5"></i> Tools</a>
+        <a href="#faq" class="text-xs text-slate-400 hover:text-white transition">FAQ</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <!-- Section 2: How It Works -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-bold text-gray-900 mb-4">How to Create a LinkedIn Carousel in 3 Steps</h2>
-    <div class="space-y-4">
-      <div class="flex items-start gap-4">
-        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">1</span>
-        <div>
-          <h4 class="font-semibold text-gray-900">Upload Your Slides</h4>
-          <p class="text-sm text-gray-600">Drag and drop your images (PNG, JPG, WebP) in 4:5 aspect ratio (1080x1350px recommended).</p>
-        </div>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex-grow w-full">
+    <section class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-slate-300 mb-4">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-500"></i> Free • No sign-up • No watermark
       </div>
-      <div class="flex items-start gap-4">
-        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">2</span>
-        <div>
-          <h4 class="font-semibold text-gray-900">Reorder & Preview</h4>
-          <p class="text-sm text-gray-600">Arrange your slides in sequence and check how they render in real-time mobile/desktop preview modes.</p>
-        </div>
-      </div>
-      <div class="flex items-start gap-4">
-        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">3</span>
-        <div>
-          <h4 class="font-semibold text-gray-900">Export & Upload to LinkedIn</h4>
-          <p class="text-sm text-gray-600">Click download to get a formatted PDF ready to be published as a document on LinkedIn.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+        <span class="block text-2xl sm:text-3xl text-brand-500 mb-2">Free LinkedIn Carousel Tool</span>
+        Turn Images into <span class="bg-gradient-to-r from-blue-400 to-brand-500 bg-clip-text text-transparent">LinkedIn Carousels</span>
+      </h1>
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed">Upload your slides, drag to reorder, preview the carousel, and export a high-quality PDF ready to publish on LinkedIn.</p>
+    </section>
 
-  <!-- Section 3: FAQ -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions (FAQ)</h2>
-    <div class="space-y-6">
-      <div>
-        <h3 class="font-semibold text-gray-900 mb-1">What is the best aspect ratio for LinkedIn carousels?</h3>
-        <p class="text-sm text-gray-600 leading-relaxed">The ideal ratio is 4:5 Portrait (1080x1350 pixels). This dimensions cover maximum vertical space on mobile feeds, driving higher click-through rates and readability compared to standard square formats.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold text-gray-900 mb-1">Are my uploaded images stored on your servers?</h3>
-        <p class="text-sm text-gray-600 leading-relaxed">No. All PDF generation and previewing logic execute locally within your web browser using client-side JavaScript. None of your data or files are transmitted to or stored on external servers.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold text-gray-900 mb-1">Is there a limit on how many slides I can export?</h3>
-        <p class="text-sm text-gray-600 leading-relaxed">There is no hard limit on CarouselCraft. However, LinkedIn recommends keeping carousel decks between 4 to 12 slides for optimal reader retention.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold text-gray-900 mb-1">Does the PDF export include any watermarks?</h3>
-        <p class="text-sm text-gray-600 leading-relaxed">No. Every exported document is 100% clean and free of watermarks or branding, making it suitable for personal branding and enterprise use.</p>
-      </div>
-    </div>
-  </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <section class="lg:col-span-7 space-y-6" aria-label="Carousel creator">
+        <div class="glass-panel rounded-3xl p-5 sm:p-6 relative overflow-hidden group">
+          <input type="file" id="fileInput" multiple accept="image/png,image/jpeg,image/webp" class="hidden">
+          <div id="dropzone" role="button" tabindex="0" aria-label="Upload carousel slide images" class="border-2 border-dashed border-white/10 group-hover:border-brand-500/50 group-hover:bg-brand-500/5 rounded-2xl p-8 sm:p-12 text-center cursor-pointer transition flex flex-col items-center justify-center">
+            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition text-brand-500"><i data-lucide="upload-cloud" class="w-7 h-7"></i></div>
+            <h2 class="text-base font-semibold text-white mb-1">Click to upload or drag and drop slides</h2>
+            <p class="text-xs text-slate-400 mb-3">Supports PNG, JPG, and WebP images</p>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-400 bg-white/5 px-2.5 py-1 rounded-md"><i data-lucide="info" class="w-3 h-3"></i> Recommended: 1080 × 1350 px (4:5)</span>
+          </div>
+          <p id="statusMessage" class="hidden mt-4 text-sm text-slate-300" role="status" aria-live="polite"></p>
+        </div>
 
-  <!-- Section 4: Footer Links -->
-  <footer class="pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
-    <div class="flex justify-center gap-6 mb-4">
-      <a href="/about.html" class="hover:text-gray-900 transition">About Us</a>
-      <a href="/privacy.html" class="hover:text-gray-900 transition">Privacy Policy</a>
-      <a href="/terms.html" class="hover:text-gray-900 transition">Terms of Service</a>
-      <a href="/contact.html" class="hover:text-gray-900 transition">Contact Us</a>
-        
-        
+        <div id="deckControls" class="glass-panel rounded-3xl p-5 sm:p-6 hidden">
+          <div class="flex items-center justify-between gap-3 mb-4">
+            <div class="flex items-center gap-2"><h2 class="font-bold text-sm text-white">Slide Deck</h2><span id="slideCountBadge" class="text-xs font-semibold px-2 py-0.5 rounded-full bg-brand-500/20 text-blue-300 border border-brand-500/30">0 slides</span></div>
+            <div class="flex items-center gap-2">
+              <button id="addMoreBtn" type="button" class="text-xs px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 transition flex items-center gap-1"><i data-lucide="plus" class="w-3.5 h-3.5"></i> Add</button>
+              <button id="clearAllBtn" type="button" class="text-xs px-3 py-2 rounded-lg bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 text-red-300 transition flex items-center gap-1"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Clear</button>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 mb-3 flex items-center gap-1.5"><i data-lucide="grip-horizontal" class="w-3.5 h-3.5"></i> Drag thumbnails to reorder slides. Select a thumbnail to preview it.</p>
+          <div id="sortableSlides" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 min-h-[60px]"></div>
+          <div class="mt-6 pt-5 border-t border-white/5">
+            <button id="downloadPdfBtn" type="button" class="w-full py-3.5 px-6 rounded-xl bg-brand-500 hover:bg-brand-600 active:scale-[0.99] text-white font-bold text-sm shadow-lg shadow-brand-500/30 transition flex items-center justify-center gap-2"><i data-lucide="download" class="w-4 h-4"></i> Download LinkedIn PDF</button>
+            <p class="text-center text-[11px] text-slate-500 mt-3">Your images are processed locally in your browser.</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="lg:col-span-5 flex flex-col items-center" aria-label="LinkedIn carousel preview">
+        <div class="w-full max-w-[360px] bg-[#1e293b] p-3.5 rounded-[40px] shadow-2xl border border-slate-700/60 custom-glow relative">
+          <div class="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-[#0f172a] rounded-full z-20 flex items-center justify-center"><div class="w-2.5 h-2.5 rounded-full bg-slate-800 mr-2"></div><div class="w-7 h-1 rounded-full bg-slate-800"></div></div>
+          <div class="bg-white rounded-[32px] overflow-hidden flex flex-col h-[560px] text-slate-900 select-none relative pt-6">
+            <div class="px-4 py-2 border-b border-slate-100 flex items-center justify-between">
+              <div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xs">LC</div><div><p class="text-xs font-bold leading-tight">Your Brand <span class="text-[9px] text-slate-400 font-normal">• 1st</span></p><p class="text-[10px] text-slate-400 leading-tight">LinkedIn Carousel Preview</p></div></div>
+              <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-400"></i>
+            </div>
+            <div id="previewArea" class="relative flex-grow bg-slate-100 flex items-center justify-center overflow-hidden">
+              <img id="mainPreviewImg" class="max-h-full max-w-full object-contain hidden" alt="Selected carousel slide preview">
+              <div id="placeholderState" class="text-center p-8 text-slate-400"><div class="w-12 h-12 rounded-2xl bg-slate-200/80 mx-auto flex items-center justify-center mb-2"><i data-lucide="file-image" class="w-6 h-6 text-slate-500"></i></div><p class="text-xs font-semibold text-slate-600">Preview is ready</p><p class="text-[10px] text-slate-400 mt-0.5">Upload images to preview your carousel</p></div>
+              <button id="prevBtn" type="button" aria-label="Previous slide" class="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 text-white hidden items-center justify-center hover:bg-black/80 transition"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+              <button id="nextBtn" type="button" aria-label="Next slide" class="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 text-white hidden items-center justify-center hover:bg-black/80 transition"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+            </div>
+            <div class="px-4 py-2.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600"><span id="pageIndicator" class="font-bold text-[11px] text-slate-500">0 / 0</span><div class="flex items-center gap-1 text-[11px] text-blue-600 font-semibold"><span>Swipe preview</span><i data-lucide="arrow-right" class="w-3 h-3"></i></div></div>
+            <div class="px-5 py-2 border-t border-slate-100 flex items-center justify-between text-slate-400"><i data-lucide="thumbs-up" class="w-4 h-4"></i><i data-lucide="message-square" class="w-4 h-4"></i><i data-lucide="repeat" class="w-4 h-4"></i><i data-lucide="send" class="w-4 h-4"></i></div>
+          </div>
+        </div>
+      </aside>
     </div>
-    <p>© 2026 CarouselCraft. All rights reserved. Built for LinkedIn creators.</p>
+
+    <section id="how-it-works" class="content-light mt-20 max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4 text-center">How to Create a LinkedIn Carousel PDF</h2>
+      <p class="text-sm leading-7 text-center mb-8">Create a carousel document in three simple steps without installing software or creating an account.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="glass-panel rounded-2xl p-5"><span class="text-blue-400 font-extrabold text-xl">01</span><h3 class="font-bold mt-2 mb-2">Upload your images</h3><p class="text-sm leading-6">Choose PNG, JPG, or WebP images from your device. For portrait slides, 1080 × 1350 pixels is a useful starting size.</p></div>
+        <div class="glass-panel rounded-2xl p-5"><span class="text-blue-400 font-extrabold text-xl">02</span><h3 class="font-bold mt-2 mb-2">Arrange and preview</h3><p class="text-sm leading-6">Drag thumbnails to set the slide order. Select a thumbnail or use the preview arrows to review each slide.</p></div>
+        <div class="glass-panel rounded-2xl p-5"><span class="text-blue-400 font-extrabold text-xl">03</span><h3 class="font-bold mt-2 mb-2">Download your PDF</h3><p class="text-sm leading-6">Export the ordered images as a PDF document, then review the file before uploading it to LinkedIn.</p></div>
+      </div>
+    </section>
+
+    <section id="faq" class="content-light mt-16 border-t border-white/10 pt-10 max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-7 text-center">Frequently Asked Questions</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <article class="glass-panel p-5 rounded-2xl"><h3 class="font-bold text-sm mb-2">Is this LinkedIn Carousel Tool free?</h3><p class="text-sm leading-6">Yes. You can upload images and create a PDF in your browser without signing up. Your device and browser performance may affect how many large images you can process at once.</p></article>
+        <article class="glass-panel p-5 rounded-2xl"><h3 class="font-bold text-sm mb-2">Are my images uploaded to a server?</h3><p class="text-sm leading-6">This page reads the selected image files locally in your browser and builds the PDF on your device. The files are not sent to this website by the carousel tool.</p></article>
+        <article class="glass-panel p-5 rounded-2xl"><h3 class="font-bold text-sm mb-2">What image dimensions should I use?</h3><p class="text-sm leading-6">A 4:5 portrait image such as 1080 × 1350 pixels is a common carousel design size. Other image dimensions can also be exported; the PDF page will use a consistent portrait layout.</p></article>
+        <article class="glass-panel p-5 rounded-2xl"><h3 class="font-bold text-sm mb-2">Can I change the slide order?</h3><p class="text-sm leading-6">Yes. Drag the thumbnails to reorder the slides. The PDF is generated in the order shown in the slide deck.</p></article>
+        <article class="glass-panel p-5 rounded-2xl"><h3 class="font-bold text-sm mb-2">Will the PDF contain a watermark?</h3><p class="text-sm leading-6">The PDF export created by this tool does not add a watermark. Make sure you have permission to use the images included in your document.</p></article>
+        <article class="glass-panel p-5 rounded-2xl"><h3 class="font-bold text-sm mb-2">Does this tool post directly to LinkedIn?</h3><p class="text-sm leading-6">No. It creates a PDF file for you to review and upload to LinkedIn yourself.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/5 py-8 text-center text-xs text-slate-500 bg-[#070a11]">
+    <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-4 px-4">
+      <a href="/about.html" class="hover:text-white">About Us</a>
+      <a href="/privacy.html" class="hover:text-white">Privacy Policy</a>
+      <a href="/terms.html" class="hover:text-white">Terms of Service</a>
+      <a href="/contact.html" class="hover:text-white">Contact Us</a>
+    </nav>
+    <p>© <span id="year"></span> LinkedIn Carousel Tool. All rights reserved.</p>
+    <p class="mt-2 px-4">LinkedIn is a trademark of its respective owner. This is an independent tool and is not affiliated with or endorsed by LinkedIn.</p>
   </footer>
 
-</section>
-    
+  <script>
+    (() => {
+      'use strict';
+      const { jsPDF } = window.jspdf || {};
+      const state = { slides: [], activeIndex: 0, sortable: null, busy: false };
+      const el = (id) => document.getElementById(id);
+      const fileInput = el('fileInput');
+      const dropzone = el('dropzone');
+      const deckControls = el('deckControls');
+      const sortableSlides = el('sortableSlides');
+      const mainPreviewImg = el('mainPreviewImg');
+      const placeholderState = el('placeholderState');
+      const pageIndicator = el('pageIndicator');
+      const prevBtn = el('prevBtn');
+      const nextBtn = el('nextBtn');
+      const downloadPdfBtn = el('downloadPdfBtn');
+      const statusMessage = el('statusMessage');
 
+      el('year').textContent = new Date().getFullYear();
+      if (window.lucide) lucide.createIcons();
+
+      function message(text, isError = false) {
+        statusMessage.textContent = text;
+        statusMessage.classList.remove('hidden', 'text-red-300', 'text-slate-300', 'text-emerald-300');
+        statusMessage.classList.add(isError ? 'text-red-300' : 'text-emerald-300');
+      }
+
+      function openPicker() { fileInput.click(); }
+      dropzone.addEventListener('click', openPicker);
+      dropzone.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openPicker(); }
+      });
+      el('addMoreBtn').addEventListener('click', openPicker);
+      fileInput.addEventListener('change', async (event) => {
+        await loadFiles(Array.from(event.target.files || []));
+        fileInput.value = '';
+      });
+
+      ['dragenter', 'dragover'].forEach(type => dropzone.addEventListener(type, (event) => {
+        event.preventDefault();
+        dropzone.classList.add('border-brand-500', 'bg-brand-500/10');
+      }));
+      ['dragleave', 'drop'].forEach(type => dropzone.addEventListener(type, () => {
+        dropzone.classList.remove('border-brand-500', 'bg-brand-500/10');
+      }));
+      dropzone.addEventListener('drop', async (event) => {
+        event.preventDefault();
+        await loadFiles(Array.from(event.dataTransfer?.files || []));
+      });
+
+      async function loadFiles(files) {
+        const images = files.filter(file => /^image\/(png|jpeg|webp)$/.test(file.type));
+        if (!images.length) {
+          message('Please select PNG, JPG, or WebP image files.', true);
+          return;
+        }
+        const rejected = files.length - images.length;
+        try {
+          const loadedSlides = await Promise.all(images.map(file => new Promise((resolve, reject) => {
+                  const reader = new FileReader();
+            reader.onload = () => {
+              const image = new Image();
+              image.onload = () => resolve({
+                id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+                src: reader.result,
+                name: file.name,
+                width: image.naturalWidth,
+                height: image.naturalHeight,
+                type: file.type
+              });
+              image.onerror = () => reject(new Error(`Could not read ${file.name}`));
+              image.src = reader.result;
+            };
+            reader.onerror = () => reject(new Error(`Could not read ${file.name}`));
+            reader.readAsDataURL(file);
+          })));
+          state.slides.push(...loadedSlides);
+          if (state.activeIndex >= state.slides.length) state.activeIndex = 0;
+          render();
+          message(`${loadedSlides.length} image${loadedSlides.length === 1 ? '' : 's'} added${rejected ? `; ${rejected} unsupported file(s) skipped` : ''}.`);
+        } catch (error) {
+          console.error(error);
+          message('One or more images could not be read. Please try another image.', true);
+        }
+      }
+
+      function render() {
+        const hasSlides = state.slides.length > 0;
+        deckControls.classList.toggle('hidden', !hasSlides);
+        placeholderState.classList.toggle('hidden', hasSlides);
+        mainPreviewImg.classList.toggle('hidden', !hasSlides);
+        prevBtn.classList.toggle('hidden', !hasSlides);
+        nextBtn.classList.toggle('hidden', !hasSlides);
+        prevBtn.classList.toggle('flex', hasSlides);
+        nextBtn.classList.toggle('flex', hasSlides);
+        el('slideCountBadge').textContent = `${state.slides.length} slide${state.slides.length === 1 ? '' : 's'}`;
+        pageIndicator.textContent = hasSlides ? `${state.activeIndex + 1} / ${state.slides.length}` : '0 / 0';
+
+        if (hasSlides) {
+          const slide = state.slides[state.activeIndex];
+          mainPreviewImg.src = slide.src;
+          mainPreviewImg.alt = `Slide ${state.activeIndex + 1}: ${slide.name}`;
+        } else {
+          mainPreviewImg.removeAttribute('src');
+        }
+
+        sortableSlides.innerHTML = '';
+        state.slides.forEach((slide, index) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = `slide-thumb relative overflow-hidden rounded-xl border ${index === state.activeIndex ? 'border-blue-400 ring-2 ring-blue-500/40' : 'border-white/10'} bg-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400`;
+          button.dataset.id = slide.id;
+          button.setAttribute('aria-label', `Preview slide ${index + 1}, ${slide.name}`);
+          button.title = slide.name;
+          const img = document.createElement('img');
+          img.src = slide.src;
+          img.alt = '';
+          img.className = 'w-full h-full object-cover';
+          const badge = document.createElement('span');
+          badge.className = 'absolute top-1 left-1 rounded-md bg-black/75 text-white text-[10px] font-bold px-1.5 py-0.5';
+          badge.textContent = String(index + 1);
+          button.append(img, badge);
+          button.addEventListener('click', () => { state.activeIndex = index; render(); });
+          sortableSlides.appendChild(button);
+        });
+
+        if (state.sortable) state.sortable.destroy();
+        if (window.Sortable && hasSlides) {
+          state.sortable = new Sortable(sortableSlides, {
+            animation: 150,
+            ghostClass: 'sortable-ghost',
+            onEnd: (event) => {
+              if (event.oldIndex === event.newIndex || event.oldIndex == null || event.newIndex == null) return;
+              const [moved] = state.slides.splice(event.oldIndex, 1);
+              state.slides.splice(event.newIndex, 0, moved);
+              state.activeIndex = event.newIndex;
+              render();
+            }
+          });
+        }
+        downloadPdfBtn.disabled = !hasSlides || state.busy;
+        if (window.lucide) lucide.createIcons();
+      }
+
+      prevBtn.addEventListener('click', () => {
+        if (!state.slides.length) return;
+        state.activeIndex = (state.activeIndex - 1 + state.slides.length) % state.slides.length;
+        render();
+      });
+      nextBtn.addEventListener('click', () => {
+        if (!state.slides.length) return;
+        state.activeIndex = (state.activeIndex + 1) % state.slides.length;
+        render();
+      });
+
+      el('clearAllBtn').addEventListener('click', () => {
+        state.slides = [];
+        state.activeIndex = 0;
+        if (state.sortable) { state.sortable.destroy(); state.sortable = null; }
+        render();
+        message('All slides have been cleared.');
+      });
+
+      function loadImage(src) {
+        return new Promise((resolve, reject) => {
+          const image = new Image();
+          image.onload = () => resolve(image);
+          image.onerror = () => reject(new Error('An image could not be prepared for PDF export.'));
+          image.src = src;
+        });
+      }
+
+      downloadPdfBtn.addEventListener('click', async () => {
+        if (!state.slides.length || state.busy) return;
+        if (!jsPDF) {
+          message('PDF library did not load. Check your internet connection and reload the page.', true);
+          return;
+        }
+        state.busy = true;
+        downloadPdfBtn.disabled = true;
+        downloadPdfBtn.innerHTML = '<i data-lucide="loader-circle" class="w-4 h-4 animate-spin"></i> Creating PDF…';
+        if (window.lucide) lucide.createIcons();
+        try {
+          // Consistent portrait pages. Images are fitted inside each page without cropping.
+          const pageWidth = 108;  // mm
+          const pageHeight = 135; // 4:5 ratio
+          const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [pageWidth, pageHeight], compress: true });
+          for (let i = 0; i < state.slides.length; i++) {
+            const slide = state.slides[i];
+            const image = await loadImage(slide.src);
+            if (i > 0) pdf.addPage([pageWidth, pageHeight], 'portrait');
+            const ratio = Math.min(pageWidth / image.naturalWidth, pageHeight / image.naturalHeight);
+            const width = image.naturalWidth * ratio;
+            const height = image.naturalHeight * ratio;
+            const x = (pageWidth - width) / 2;
+            const y = (pageHeight - height) / 2;
+            const format = slide.type === 'image/png' ? 'PNG' : 'JPEG';
+            // jsPDF accepts data URLs; WebP is normalized through canvas for reliable PDF compatibility.
+            let data = slide.src;
+            let outputFormat = format;
+            if (slide.type === 'image/webp') {
+              const canvas = document.createElement('canvas');
+              canvas.width = image.naturalWidth;
+              canvas.height = image.naturalHeight;
+              const context = canvas.getContext('2d');
+              context.drawImage(image, 0, 0);
+              data = canvas.toDataURL('image/jpeg', 0.95);
+              outputFormat = 'JPEG';
+            }
+            pdf.addImage(data, outputFormat, x, y, width, height, undefined, 'FAST');
+          }
+          pdf.save('linkedin-carousel.pdf');
+          message(`PDF created successfully with ${state.slides.length} slide${state.slides.length === 1 ? '' : 's'}.`);
+        } catch (error) {
+          console.error(error);
+          message('Could not create the PDF. Try fewer or smaller images, then try again.', true);
+        } finally {
+          state.busy = false;
+          downloadPdfBtn.innerHTML = '<i data-lucide="download" class="w-4 h-4"></i> Download LinkedIn PDF';
+          render();
+        }
+      });
+
+      render();
+    })();
+  </script>
 </body>
 </html>
